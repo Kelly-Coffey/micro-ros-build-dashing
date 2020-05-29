@@ -28,8 +28,8 @@ if [ "$UROS_TRANSPORT" == "udp" ] || [ "$UROS_TRANSPORT" == "tcp" ]; then
 elif [ "$UROS_TRANSPORT" == "serial" ]; then
       echo "Using serial device USART$UROS_AGENT_DEVICE."
 
-      cp -f $EXTENSIONS_DIR/Src/olimex_e407_serial_transport.c $FW_TARGETDIR/mcu_ws/eProsima/Micro-XRCE-DDS-Client/src/c/profile/transport/serial/serial_transport_external.c
-      cp -f $EXTENSIONS_DIR/Inc/olimex_e407_serial_transport.h $FW_TARGETDIR/mcu_ws/eProsima/Micro-XRCE-DDS-Client/include/uxr/client/profile/transport/serial/serial_transport_external.h
+      cp -f $EXTENSIONS_DIR/Src/stm32f439_nucleo_serial_transport.c $FW_TARGETDIR/mcu_ws/eProsima/Micro-XRCE-DDS-Client/src/c/profile/transport/serial/serial_transport_external.c
+      cp -f $EXTENSIONS_DIR/Inc/stm32f439_nucleo_serial_transport.h $FW_TARGETDIR/mcu_ws/eProsima/Micro-XRCE-DDS-Client/include/uxr/client/profile/transport/serial/serial_transport_external.h
       update_meta "microxrcedds_client" "UCLIENT_EXTERNAL_SERIAL=ON"
 
       update_meta "rmw_microxrcedds" "RMW_UXRCE_TRANSPORT=custom"
@@ -43,8 +43,8 @@ elif [ "$UROS_TRANSPORT" == "serial" ]; then
 elif [ "$UROS_TRANSPORT" == "serial-usb" ]; then
       echo "Using serial USB device. EXPERIMENTAL."
 
-      cp -f $EXTENSIONS_DIR/Src/olimex_e407_usb_transport.c $FW_TARGETDIR/mcu_ws/eProsima/Micro-XRCE-DDS-Client/src/c/profile/transport/serial/serial_transport_external.c
-      cp -f $EXTENSIONS_DIR/Inc/olimex_e407_usb_transport.h $FW_TARGETDIR/mcu_ws/eProsima/Micro-XRCE-DDS-Client/include/uxr/client/profile/transport/serial/serial_transport_external.h
+      cp -f $EXTENSIONS_DIR/Src/stm32f439_nucleo_usb_transport.c $FW_TARGETDIR/mcu_ws/eProsima/Micro-XRCE-DDS-Client/src/c/profile/transport/serial/serial_transport_external.c
+      cp -f $EXTENSIONS_DIR/Inc/stm32f439_nucleo_usb_transport.h $FW_TARGETDIR/mcu_ws/eProsima/Micro-XRCE-DDS-Client/include/uxr/client/profile/transport/serial/serial_transport_external.h
       update_meta "microxrcedds_client" "UCLIENT_EXTERNAL_SERIAL=ON"
 
       update_meta "rmw_microxrcedds" "RMW_UXRCE_TRANSPORT=custom_serial"
